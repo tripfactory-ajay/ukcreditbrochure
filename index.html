@@ -1,1 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORN Credit System - UK Member Benefits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .slide {
+            display: none;
+            min-height: 100vh;
+            animation: fadeIn 0.6s ease-in-out;
+            background-color: #000000;
+        }
+        
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            background-color: #111111;
+            border: 1px solid #222222;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: #333333;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+        
+        .nav-dot {
+            transition: all 0.3s ease;
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .nav-dot.active {
+            background-color: #ffffff;
+            transform: scale(1.3);
+        }
+        
+        .credit-card-visual {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid #333333;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+        }
+        
+        .geometric-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        
+        .border-subtle {
+            border-color: #222222;
+        }
+        
+        .bg-subtle {
+            background-color: #111111;
+        }
+        
+        .progress-bar {
+            background-color: #ffffff;
+        }
 
+        /* Focus styles for accessibility */
+        button:focus, a:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+
+        .slide:focus {
+            outline: none;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="overflow-hidden">
+
+    <!-- Navigation Dots -->
+    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-3" role="tablist" aria-label="Slide navigation">
+        <button onclick="goToSlide(0)" class="nav-dot active w-3 h-3 rounded-full" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1: Introduction" tabindex="0"></button>
+        <button onclick="goToSlide(1)" class="nav-dot w-3 h-3 rounded-full" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2: Global Network" tabindex="-1"></button>
+        <button onclick="goToSlide(2)" class="nav-dot w-3 h-3 rounded-full" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3: Credit System" tabindex="-1"></button>
+        <button onclick="goToSlide(3)" class="nav-dot w-3 h-3 rounded-full" data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4: Trust & Governance" tabindex="-1"></button>
+        <button onclick="goToSlide(4)" class="nav-dot w-3 h-3 rounded-full" data-slide="4" role="tab" aria-selected="false" aria-label="Slide 5: How It Works" tabindex="-1"></button>
+        <button onclick="goToSlide(5)" class="nav-dot w-3 h-3 rounded-full" data-slide="5" role="tab" aria-selected="false" aria-label="Slide 6: Contact Us" tabindex="-1"></button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 h-1 progress-bar transition-all duration-500 z-50" id="progressBar" style="width: 0%"></div>
+
+    <!-- Slide 1: Title Slide -->
+    <div class="slide active geometric-pattern relative" id="slide-0" tabindex="0" aria-label="Introduction slide">
+        <!-- Header -->
+        <div class="relative z-10 flex justify-between items-center p-8 border-b border-subtle">
+            <div class="flex items-center gap-4">
+                <img src="orn-logo.png" alt="ORN Worldwide" class="h-12 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center hidden">
+                    <span class="text-black font-bold text-xl">ORN</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">ORN Worldwide</h1>
+                    <p class="text-sm text-gray-500">Part of the $60B HCL Group</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="px-4 py-2 bg-white text-black rounded-full text-sm font-medium">UK Member Exclusive</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 flex-1 flex items-center justify-center p-12">
+            <div class="max-w-6xl w-full grid grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
+                        <i class="fas fa-crown text-white"></i>
+                        <span class="text-white font-semibold text-sm">Member Benefit Programme</span>
+                    </div>
+                    
+                    <h1 class="text-6xl font-bold leading-tight">
+                        A Smarter Way for Your<br>
+                        <span class="text-gray-400">Members to Travel</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-400 leading-relaxed max-w-lg">
+                        Introducing the <strong class="text-white">ORN Credit System</strong> — exclusive travel benefits, 
+                        flexible payment terms, and premium rewards for UK association members.
+                    </p>
+                    
+                    <div class="flex gap-4">
+                        <button onclick="nextSlide()" class="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-all flex items-center gap-2" tabindex="0">
+                            Explore Benefits <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button onclick="goToSlide(5)" class="px-8 py-4 bg-transparent border border-white/30 rounded-lg font-semibold hover:bg-white/10 transition-all" tabindex="0">
+                            Join Now
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Credit Card Visual -->
+                    <div class="credit-card-visual rounded-2xl p-8 relative overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-8">
+                                <div class="w-16 h-10 bg-gradient-to-r from-gray-600 to-gray-400 rounded-md"></div>
+                                <i class="fas fa-wifi text-2xl text-white/40"></i>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="text-2xl font-mono tracking-widest text-white/80">
+                                    •••• •••• •••• 8842
+                                </div>
+                                
+                                <div class="flex justify-between items-end">
+                                    <div>
+                                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Member Name</p>
+                                        <p class="font-semibold text-lg">UK ASSOCIATION MEMBER</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Credit Limit</p>
+                                        <p class="text-2xl font-bold text-white">£25,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-black text-sm"></i>
+                                    </div>
+                                    <span class="text-sm font-medium">ORN Platinum</span>
+                                </div>
+                                <span class="text-xs text-gray-500">Valid Thru 12/28</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats -->
+                    <div class="absolute -bottom-6 -left-6 bg-subtle border border-subtle rounded-xl p-4 shadow-2xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-pound-sign text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Avg. Member Savings</p>
+                                <p class="text-lg font-bold text-white">£1,250/year</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="relative z-10 border-t border-subtle p-6">
+            <div class="max-w-6xl mx-auto flex justify-center items-center gap-12 text-gray-500">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                    <span class="text-sm font-medium">ISO 27001:2022</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-lock text-2xl"></i>
+                    <span class="text-sm font-medium">GDPR Ready</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-2xl"></i>
+                    <span class="text-sm font-medium">SOC 2 Type 2</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-globe text-2xl"></i>
+                    <span class="text-sm font-medium">104 Nationalities Served</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Global Strength -->
+    <div class="slide geometric-pattern" id="slide-1" tabindex="-1" aria-label="Global network slide">
+        <div class="p-8 border-b border-subtle">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <h2 class="text-3xl font-bold">Global Distribution Network</h2>
+                <span class="text-gray-500">Trusted Infrastructure</span>
+            </div>
+        </div>
+
+        <div class="flex-1 p-12 flex items-center">
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-3 gap-8">
+                <div class="col-span-2 space-y-8">
+                    <div class="bg-subtle border border-subtle rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-map-marked-alt text-white"></i>
+                            Your Members Can Travel With Confidence
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-building text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">200+ Delivery Centers</h4>
+                                        <p class="text-gray-500 text-sm">Worldwide support infrastructure</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-flask text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">150+ Innovation Labs</h4>
+                                        <p class="text-gray-500 text-sm">Cutting-edge travel technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-users text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">226,000+ Employees</h4>
+                                        <p class="text-gray-500 text-sm">HCL Group backing & expertise</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-headset text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">24/7 UK Support</h4>
+                                        <p class="text-gray-500 text-sm">Dedicated member helpline</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="bg-subtle border border-subtle rounded-xl p-4 text-center card-hover">
+                            <i class="fas fa-flag-usa text-3xl mb-2 text-gray-400"></i>
+                            <p class="font-semibold">Americas</p>
+                            <p class="text-xs text-gray-500">US, Canada, LATAM</p>
+                        </div>
+                        <div class="bg-subtle border border-subtle rounded-xl p-4 text-center card-hover">
+                            <i class="fas fa-landmark text-3xl mb-2 text-gray-400"></i>
+                            <p class="font-semibold">EMEA</p>
+                            <p class="text-xs text-gray-500">UK, Europe, Dubai</p>
+                        </div>
+                        <div class="bg-subtle border border-subtle rounded-xl p-4 text-center card-hover">
+                            <i class="fas fa-torii-gate text-3xl mb-2 text-gray-400"></i>
+                            <p class="font-semibold">APAC</p>
+                            <p class="text-xs text-gray-500">Asia-Pacific</p>
+                        </div>
+                        <div class="bg-subtle border border-subtle rounded-xl p-4 text-center card-hover">
+                            <i class="fas fa-crown text-3xl mb-2 text-white"></i>
+                            <p class="font-semibold">UK Hub</p>
+                            <p class="text-xs text-gray-500">London Base</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-br from-subtle to-black border border-subtle rounded-2xl p-6">
+                        <h4 class="text-lg font-bold mb-4 text-white">UK Focus</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-white"></i>
+                                <span>London Operations Centre</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-white"></i>
+                                <span>GBP Pricing & Billing</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-white"></i>
+                                <span>UK Consumer Protection</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-white"></i>
+                                <span>ATOL Protected Options</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-white"></i>
+                                <span>UK-Based Account Managers</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-subtle border border-subtle rounded-2xl p-6">
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-white mb-1">104</p>
+                            <p class="text-sm text-gray-500">Nationalities Served</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Credit System Benefits -->
+    <div class="slide geometric-pattern" id="slide-2" tabindex="-1" aria-label="Credit system slide">
+        <div class="p-8 border-b border-subtle">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <h2 class="text-3xl font-bold">ORN Credit System</h2>
+                <span class="px-4 py-2 bg-white text-black rounded-full text-sm font-semibold">UK Member Exclusive</span>
+            </div>
+        </div>
+
+        <div class="flex-1 p-12 flex items-center">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-bold mb-4">Travel Now, Pay Later</h3>
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+                        Flexible credit terms designed specifically for UK association members. 
+                        No upfront costs, better cash flow, premium benefits.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-8 mb-12">
+                    <div class="bg-subtle border border-subtle rounded-2xl p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-credit-card text-3xl text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3">Up to £25,000 Credit</h4>
+                        <p class="text-gray-500 mb-4">Pre-approved credit limit for your members with instant approval decisions.</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-white text-xs"></i>
+                                No personal guarantees required
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-white text-xs"></i>
+                                Instant credit decisions
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-subtle border border-subtle rounded-2xl p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-calendar-alt text-3xl text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3">60-Day Payment Terms</h4>
+                        <p class="text-gray-500 mb-4">Extended payment terms giving your members flexibility and improved cash flow.</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-white text-xs"></i>
+                                Book today, pay in 60 days
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-white text-xs"></i>
+                                No interest on standard terms
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-subtle border border-subtle rounded-2xl p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-percentage text-3xl text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3">5% Member Discount</h4>
+                        <p class="text-gray-500 mb-4">Automatic discount on all bookings made through the ORN Credit System.</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-white text-xs"></i>
+                                Applied automatically at checkout
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-white text-xs"></i>
+                                Stacks with early booking offers
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-subtle border border-subtle rounded-2xl p-8">
+                    <div class="grid grid-cols-4 gap-8 text-center">
+                        <div>
+                            <p class="text-3xl font-bold text-white stat-counter" data-target="0">0%</p>
+                            <p class="text-sm text-gray-500 mt-1">Setup Fees</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white stat-counter" data-target="60">60</p>
+                            <p class="text-sm text-gray-500 mt-1">Day Terms</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white stat-counter" data-target="5">5%</p>
+                            <p class="text-sm text-gray-500 mt-1">Member Discount</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white stat-counter" data-target="24">24/7</p>
+                            <p class="text-sm text-gray-500 mt-1">Support Access</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Trust & Governance -->
+    <div class="slide geometric-pattern" id="slide-3" tabindex="-1" aria-label="Trust and governance slide">
+        <div class="p-8 border-b border-subtle">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <h2 class="text-3xl font-bold">Trust, Governance & Brand Safety</h2>
+                <span class="text-gray-500">Enterprise-Grade Security</span>
+            </div>
+        </div>
+
+        <div class="flex-1 p-12 flex items-center">
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-subtle border border-subtle rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">We Operate With</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-black rounded-lg border border-subtle">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">01</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Opt-in Communication Only</h4>
+                                    <p class="text-sm text-gray-500">Respect member privacy preferences</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-black rounded-lg border border-subtle">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">02</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Data Used Strictly for Travel Fulfillment</h4>
+                                    <p class="text-sm text-gray-500">No third-party marketing or sales</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-black rounded-lg border border-subtle">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">03</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Defined Escalation Ownership</h4>
+                                    <p class="text-sm text-gray-500">Clear accountability at every level</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-black rounded-lg border border-subtle">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">04</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Monthly Performance Reporting</h4>
+                                    <p class="text-sm text-gray-500">Transparent usage and savings data</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-black rounded-lg border border-subtle">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">05</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Quarterly Leadership Review</h4>
+                                    <p class="text-sm text-gray-500">Strategic partnership alignment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-white rounded-xl p-6 text-center card-hover">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-3xl text-black"></i>
+                            </div>
+                            <p class="text-black font-bold text-sm">SOC 2</p>
+                            <p class="text-gray-600 text-xs">Type 2 Certified</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 text-center card-hover">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-lock text-3xl text-black"></i>
+                            </div>
+                            <p class="text-black font-bold text-sm">GDPR</p>
+                            <p class="text-gray-600 text-xs">Ready</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 text-center card-hover">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-certificate text-3xl text-black"></i>
+                            </div>
+                            <p class="text-black font-bold text-sm">ISO</p>
+                            <p class="text-gray-600 text-xs">27001:2022</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-subtle border border-subtle rounded-2xl p-8">
+                        <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <i class="fas fa-quote-left text-white"></i>
+                            Our Promise
+                        </h4>
+                        <blockquote class="text-lg text-gray-400 italic leading-relaxed mb-4">
+                            "We help your members travel better, save more, and feel looked after — 
+                            while strengthening your association's value proposition."
+                        </blockquote>
+                        <div class="flex items-center gap-3">
+                            <img src="orn-logo.png" alt="ORN Worldwide" class="h-10 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <div class="w-10 h-10 bg-white rounded-full items-center justify-center hidden">
+                                <span class="text-black font-bold text-sm">ORN</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">ORN Worldwide</p>
+                                <p class="text-sm text-gray-500">Part of HCL Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                <i class="fas fa-pound-sign text-black text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">UK Financial Conduct Authority</p>
+                                <p class="text-sm text-gray-400">Regulated credit activities where applicable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: How It Works -->
+    <div class="slide geometric-pattern" id="slide-4" tabindex="-1" aria-label="How it works slide">
+        <div class="p-8 border-b border-subtle">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <h2 class="text-3xl font-bold">How It Works</h2>
+                <span class="text-gray-500">Simple 4-Step Process</span>
+            </div>
+        </div>
+
+        <div class="flex-1 p-12 flex items-center">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="grid grid-cols-4 gap-6 mb-12">
+                    <div class="relative">
+                        <div class="bg-subtle border border-subtle rounded-2xl p-6 h-full card-hover">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">1</div>
+                            <h4 class="text-xl font-bold mb-2">Enrol</h4>
+                            <p class="text-gray-500 text-sm">Association signs partnership agreement and provides member database</p>
+                        </div>
+                        <div class="absolute top-1/2 -right-3 transform -translate-y-1/2 text-gray-700">
+                            <i class="fas fa-chevron-right text-2xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-subtle border border-subtle rounded-2xl p-6 h-full card-hover">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">2</div>
+                            <h4 class="text-xl font-bold mb-2">Activate</h4>
+                            <p class="text-gray-500 text-sm">Members receive welcome pack with credit limits and login credentials</p>
+                        </div>
+                        <div class="absolute top-1/2 -right-3 transform -translate-y-1/2 text-gray-700">
+                            <i class="fas fa-chevron-right text-2xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-subtle border border-subtle rounded-2xl p-6 h-full card-hover">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">3</div>
+                            <h4 class="text-xl font-bold mb-2">Book & Travel</h4>
+                            <p class="text-gray-500 text-sm">Members book travel using credit, receive 5% discount, travel seamlessly</p>
+                        </div>
+                        <div class="absolute top-1/2 -right-3 transform -translate-y-1/2 text-gray-700">
+                            <i class="fas fa-chevron-right text-2xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-subtle border border-subtle rounded-2xl p-6 h-full card-hover">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">4</div>
+                            <h4 class="text-xl font-bold mb-2">Settle</h4>
+                            <p class="text-gray-500 text-sm">60-day payment terms. Simple invoicing. Monthly statements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-subtle border border-subtle rounded-2xl p-8">
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-check-circle text-4xl text-white"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">No Setup Costs</h4>
+                            <p class="text-gray-500 text-sm">Free implementation and member onboarding</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-infinity text-4xl text-white"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">No Member Limits</h4>
+                            <p class="text-gray-500 text-sm">Scales from 100 to 100,000+ members</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-line text-4xl text-white"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">Revenue Share</h4>
+                            <p class="text-gray-500 text-sm">Association earns on every booking made</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: CTA / Join Now -->
+    <div class="slide geometric-pattern" id="slide-5" tabindex="-1" aria-label="Contact slide">
+        <div class="flex-1 flex items-center justify-center p-12">
+            <div class="max-w-4xl w-full text-center space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
+                    <i class="fas fa-star text-white"></i>
+                    <span class="text-white font-semibold">Limited Time: Q2 2026 Enrolment Open</span>
+                </div>
+
+                <h1 class="text-6xl font-bold leading-tight">
+                    Ready to Offer Your Members<br>
+                    <span class="text-gray-500">Something Better?</span>
+                </h1>
+
+                <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+                    Join leading UK associations already transforming their member benefits 
+                    with the ORN Credit System. Setup takes less than 48 hours.
+                </p>
+
+                <div class="grid grid-cols-3 gap-6 max-w-3xl mx-auto mb-8">
+                    <div class="bg-subtle border border-subtle rounded-xl p-6">
+                        <p class="text-3xl font-bold text-white">48hrs</p>
+                        <p class="text-sm text-gray-500">Setup Time</p>
+                    </div>
+                    <div class="bg-subtle border border-subtle rounded-xl p-6">
+                        <p class="text-3xl font-bold text-white">£0</p>
+                        <p class="text-sm text-gray-500">Implementation Cost</p>
+                    </div>
+                    <div class="bg-subtle border border-subtle rounded-xl p-6">
+                        <p class="text-3xl font-bold text-white">5%</p>
+                        <p class="text-sm text-gray-500">Instant Member Savings</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 justify-center">
+                    <a href="mailto:uk@tripfactory.com?subject=Join ORN Credit System - Association Enquiry&body=Dear ORN Team,%0D%0A%0D%0AI am interested in learning more about the ORN Credit System for our association members.%0D%0A%0D%0AAssociation Name: %0D%0AMembership Size: %0D%0AContact Name: %0D%0APhone: %0D%0A%0D%0ABest regards" 
+                       class="px-8 py-4 bg-white text-black rounded-lg font-bold text-lg hover:bg-gray-200 transition-all flex items-center gap-2" tabindex="0">
+                        <i class="fas fa-envelope"></i>
+                        Email Us to Join ORN
+                    </a>
+                    <button onclick="downloadPDF()" class="px-8 py-4 bg-transparent border border-white/30 rounded-lg font-semibold hover:bg-white/10 transition-all flex items-center gap-2" tabindex="0">
+                        <i class="fas fa-download"></i>
+                        Download Proposal (PDF)
+                    </button>
+                </div>
+
+                <div class="pt-8 border-t border-subtle">
+                    <div class="flex flex-col items-center gap-4 text-gray-500">
+                        <div class="flex items-center gap-2 text-lg">
+                            <i class="fas fa-building"></i>
+                            <span class="font-semibold text-white">ORN Group (Trip Factory)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>17 Hanover Square, London W1S 1BN</span>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-phone"></i>
+                                <span>+44 20 3051 0454</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:uk@tripfactory.com" class="hover:text-white transition-colors">uk@tripfactory.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-6 pt-4">
+                    <a href="https://www.linkedin.com" target="_blank" class="w-12 h-12 bg-subtle border border-subtle rounded-full flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all" aria-label="LinkedIn" tabindex="0">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="w-12 h-12 bg-subtle border border-subtle rounded-full flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all" aria-label="Twitter" tabindex="0">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.tripfactory.com" target="_blank" class="w-12 h-12 bg-subtle border border-subtle rounded-full flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all" aria-label="Website" tabindex="0">
+                        <i class="fas fa-globe text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="border-t border-subtle p-6">
+            <div class="max-w-6xl mx-auto flex justify-between items-center text-sm text-gray-600">
+                <div class="flex items-center gap-4">
+                    <img src="orn-logo.png" alt="ORN" class="h-6 w-auto opacity-60" onerror="this.style.display='none'">
+                    <span class="font-semibold text-gray-400">ORN Worldwide</span>
+                    <span>•</span>
+                    <span>Part of $60B HCL Group</span>
+                    <span>•</span>
+                    <span>ISO 27001:2022 Certified</span>
+                </div>
+                <div>
+                    © 2026 ORN Worldwide. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Navigation -->
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-4 text-sm text-gray-600 bg-black/80 px-4 py-2 rounded-full border border-subtle">
+        <button onclick="prevSlide()" class="hover:text-white transition-colors" tabindex="0"><i class="fas fa-arrow-left"></i> Previous</button>
+        <span class="w-px h-4 bg-gray-800"></span>
+        <button onclick="nextSlide()" class="hover:text-white transition-colors" tabindex="0">Next <i class="fas fa-arrow-right"></i></button>
+        <span class="w-px h-4 bg-gray-800"></span>
+        <span id="slideCounter">1 / 6</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+
+        function showSlide(index) {
+            // Update slides
+            document.querySelectorAll('.slide').forEach((slide, i) => {
+                slide.classList.remove('active');
+                slide.setAttribute('tabindex', '-1');
+            });
+            
+            // Update nav dots
+            document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                dot.classList.remove('active');
+                dot.setAttribute('aria-selected', 'false');
+                dot.setAttribute('tabindex', '-1');
+            });
+            
+            // Show current slide
+            const currentSlideEl = document.getElementById(`slide-${index}`);
+            currentSlideEl.classList.add('active');
+            currentSlideEl.setAttribute('tabindex', '0');
+            currentSlideEl.focus();
+            
+            // Update current dot
+            const currentDot = document.querySelector(`[data-slide="${index}"]`);
+            currentDot.classList.add('active');
+            currentDot.setAttribute('aria-selected', 'true');
+            currentDot.setAttribute('tabindex', '0');
+            
+            // Update progress bar
+            const progress = ((index + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            
+            // Update counter
+            document.getElementById('slideCounter').textContent = `${index + 1} / ${totalSlides}`;
+            
+            currentSlide = index;
+            
+            // Animate counters if on slide 3
+            if (index === 2) {
+                animateCounters();
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target + (target === 60 ? '' : target === 24 ? '/7' : target === 0 ? '%' : '%');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + (target === 60 ? '' : target === 24 ? '/7' : target === 0 ? '%' : '%');
+                    }
+                }, 16);
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                goToSlide(totalSlides - 1);
+            } else if (e.key === 'Tab') {
+                // Allow normal tabbing within slides
+                return;
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }
+
+        // PDF Download function
+        function downloadPDF() {
+            // Create a simple PDF using print to PDF or download a pre-made PDF
+            // For now, we'll trigger a print dialog that can save as PDF
+            // or you can replace this with an actual PDF file URL
+            
+            // Option 1: Print to PDF (opens print dialog)
+            window.print();
+            
+            // Option 2: If you have an actual PDF file, use:
+            // const link = document.createElement('a');
+            // link.href = 'orn-credit-system-proposal.pdf';
+            // link.download = 'ORN-Credit-System-Proposal.pdf';
+            // link.click();
+        }
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
