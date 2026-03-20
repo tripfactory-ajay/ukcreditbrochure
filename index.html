@@ -79,7 +79,6 @@
             background-color: #ffffff;
         }
 
-        /* Focus styles for accessibility */
         button:focus, a:focus {
             outline: 2px solid #ffffff;
             outline-offset: 2px;
@@ -89,7 +88,6 @@
             outline: none;
         }
 
-        /* Travel background images */
         .bg-travel-1 {
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920');
             background-size: cover;
@@ -126,7 +124,6 @@
             background-position: center;
         }
 
-        /* Image card styles */
         .image-card {
             position: relative;
             overflow: hidden;
@@ -153,7 +150,6 @@
             padding: 1.5rem;
         }
     </style>
-<base target="_blank">
 </head>
 <body class="overflow-hidden">
 
@@ -170,9 +166,8 @@
     <!-- Progress Bar -->
     <div class="fixed top-0 left-0 h-1 progress-bar transition-all duration-500 z-50" id="progressBar" style="width: 0%"></div>
 
-    <!-- Slide 1: Title Slide with Travel Background -->
+    <!-- Slide 1: Title Slide -->
     <div class="slide active bg-travel-1 relative" id="slide-0" tabindex="0" aria-label="Introduction slide">
-        <!-- Header -->
         <div class="relative z-10 flex justify-between items-center p-8 border-b border-white/10 backdrop-blur-sm bg-black/20">
             <div class="flex items-center gap-4">
                 <img src="orn-logo.png" alt="ORN Worldwide" class="h-12 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
@@ -181,7 +176,7 @@
                 </div>
                 <div>
                     <h1 class="text-2xl font-bold tracking-tight">ORN Worldwide</h1>
-                    <p class="text-sm text-gray-400">Part of the $60B HCL Group</p>
+                    <p class="text-sm text-gray-500">Part of the $60B HCL Group</p>
                 </div>
             </div>
             <div class="flex items-center gap-4">
@@ -189,7 +184,6 @@
             </div>
         </div>
 
-        <!-- Main Content -->
         <div class="relative z-10 flex-1 flex items-center justify-center p-12">
             <div class="max-w-6xl w-full grid grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
@@ -219,7 +213,6 @@
                 </div>
                 
                 <div class="relative">
-                    <!-- Credit Card Visual -->
                     <div class="credit-card-visual rounded-2xl p-8 relative overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500 backdrop-blur-sm bg-black/40">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
                         
@@ -258,7 +251,6 @@
                         </div>
                     </div>
                     
-                    <!-- Floating Stats -->
                     <div class="absolute -bottom-6 -left-6 bg-black/80 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow-2xl">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
@@ -266,7 +258,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-gray-400">Avg. Member Savings</p>
-                                <p class="text-lg font-bold text-white">£1,250/year</p>
+                                <p class="text-lg font-bold text-white">Great Savings</p>
                             </div>
                         </div>
                     </div>
@@ -274,7 +266,6 @@
             </div>
         </div>
 
-        <!-- Trust Badges -->
         <div class="relative z-10 border-t border-white/10 p-6 backdrop-blur-sm bg-black/20">
             <div class="max-w-6xl mx-auto flex justify-center items-center gap-12 text-gray-400">
                 <div class="flex items-center gap-2">
@@ -297,7 +288,7 @@
         </div>
     </div>
 
-    <!-- Slide 2: Global Strength with Travel Background -->
+    <!-- Slide 2: Global Strength -->
     <div class="slide bg-travel-2" id="slide-1" tabindex="-1" aria-label="Global network slide">
         <div class="p-8 border-b border-white/10 backdrop-blur-sm bg-black/30">
             <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -387,7 +378,6 @@
                 </div>
 
                 <div class="space-y-6">
-                    <!-- Travel Image -->
                     <div class="image-card h-48">
                         <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=600" alt="World Travel">
                         <div class="image-card-overlay">
@@ -398,26 +388,11 @@
                     <div class="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-6">
                         <h4 class="text-lg font-bold mb-4 text-white">UK Focus</h4>
                         <ul class="space-y-3 text-sm">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-white"></i>
-                                <span>London Operations Centre</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-white"></i>
-                                <span>GBP Pricing & Billing</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-white"></i>
-                                <span>UK Consumer Protection</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-white"></i>
-                                <span>ATOL Protected Options</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-white"></i>
-                                <span>UK-Based Account Managers</span>
-                            </li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i><span>London Operations Centre</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i><span>GBP Pricing & Billing</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i><span>UK Consumer Protection</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i><span>ATOL Protected Options</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i><span>UK-Based Account Managers</span></li>
                         </ul>
                     </div>
 
@@ -432,7 +407,7 @@
         </div>
     </div>
 
-    <!-- Slide 3: Credit System Benefits with Travel Background -->
+    <!-- Slide 3: Credit System Benefits -->
     <div class="slide bg-travel-3" id="slide-2" tabindex="-1" aria-label="Credit system slide">
         <div class="p-8 border-b border-white/10 backdrop-blur-sm bg-black/30">
             <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -476,12 +451,12 @@
                         <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-calendar-alt text-3xl text-white"></i>
                         </div>
-                        <h4 class="text-2xl font-bold mb-3">60-Day Payment Terms</h4>
+                        <h4 class="text-2xl font-bold mb-3">Flexible Payment Terms</h4>
                         <p class="text-gray-400 mb-4">Extended payment terms giving your members flexibility and improved cash flow.</p>
                         <ul class="space-y-2 text-sm">
                             <li class="flex items-center gap-2 text-gray-300">
                                 <i class="fas fa-check text-white text-xs"></i>
-                                Book today, pay in 60 days
+                                Book today, pay later
                             </li>
                             <li class="flex items-center gap-2 text-gray-300">
                                 <i class="fas fa-check text-white text-xs"></i>
@@ -495,8 +470,8 @@
                         <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-percentage text-3xl text-white"></i>
                         </div>
-                        <h4 class="text-2xl font-bold mb-3">5% Member Discount</h4>
-                        <p class="text-gray-400 mb-4">Automatic discount on all bookings made through the ORN Credit System.</p>
+                        <h4 class="text-2xl font-bold mb-3">Great Member Savings</h4>
+                        <p class="text-gray-400 mb-4">Automatic savings on all bookings made through the ORN Credit System.</p>
                         <ul class="space-y-2 text-sm">
                             <li class="flex items-center gap-2 text-gray-300">
                                 <i class="fas fa-check text-white text-xs"></i>
@@ -510,7 +485,6 @@
                     </div>
                 </div>
 
-                <!-- Travel Images Row -->
                 <div class="grid grid-cols-4 gap-4 mb-8">
                     <div class="image-card h-32">
                         <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400" alt="Beach Holiday">
@@ -529,19 +503,19 @@
                 <div class="bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-8">
                     <div class="grid grid-cols-4 gap-8 text-center">
                         <div>
-                            <p class="text-3xl font-bold text-white stat-counter" data-target="0">0%</p>
+                            <p class="text-3xl font-bold text-white">0%</p>
                             <p class="text-sm text-gray-400 mt-1">Setup Fees</p>
                         </div>
                         <div>
-                            <p class="text-3xl font-bold text-white stat-counter" data-target="60">60</p>
-                            <p class="text-sm text-gray-400 mt-1">Day Terms</p>
+                            <p class="text-3xl font-bold text-white">Flexible</p>
+                            <p class="text-sm text-gray-400 mt-1">Payment Terms</p>
                         </div>
                         <div>
-                            <p class="text-3xl font-bold text-white stat-counter" data-target="5">5%</p>
-                            <p class="text-sm text-gray-400 mt-1">Member Discount</p>
+                            <p class="text-3xl font-bold text-white">Great</p>
+                            <p class="text-sm text-gray-400 mt-1">Member Savings</p>
                         </div>
                         <div>
-                            <p class="text-3xl font-bold text-white stat-counter" data-target="24">24/7</p>
+                            <p class="text-3xl font-bold text-white">24/7</p>
                             <p class="text-sm text-gray-400 mt-1">Support Access</p>
                         </div>
                     </div>
@@ -550,7 +524,7 @@
         </div>
     </div>
 
-    <!-- Slide 4: Trust & Governance with Travel Background -->
+    <!-- Slide 4: Trust & Governance -->
     <div class="slide bg-travel-4" id="slide-3" tabindex="-1" aria-label="Trust and governance slide">
         <div class="p-8 border-b border-white/10 backdrop-blur-sm bg-black/30">
             <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -620,7 +594,6 @@
                 </div>
 
                 <div class="space-y-6">
-                    <!-- Travel Image -->
                     <div class="image-card h-48">
                         <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=600" alt="Secure Travel">
                         <div class="image-card-overlay">
@@ -691,7 +664,7 @@
         </div>
     </div>
 
-    <!-- Slide 5: How It Works with Travel Background -->
+    <!-- Slide 5: How It Works -->
     <div class="slide bg-travel-5" id="slide-4" tabindex="-1" aria-label="How it works slide">
         <div class="p-8 border-b border-white/10 backdrop-blur-sm bg-black/30">
             <div class="max-w-6xl mx-auto flex justify-between items-center">
@@ -729,7 +702,7 @@
                         <div class="bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full card-hover">
                             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">3</div>
                             <h4 class="text-xl font-bold mb-2">Book & Travel</h4>
-                            <p class="text-gray-400 text-sm">Members book travel using credit, receive 5% discount, travel seamlessly</p>
+                            <p class="text-gray-400 text-sm">Members book travel using credit, receive great savings, travel seamlessly</p>
                         </div>
                         <div class="absolute top-1/2 -right-3 transform -translate-y-1/2 text-gray-600">
                             <i class="fas fa-chevron-right text-2xl"></i>
@@ -740,12 +713,11 @@
                         <div class="bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl p-6 h-full card-hover">
                             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-bold text-xl mb-4">4</div>
                             <h4 class="text-xl font-bold mb-2">Settle</h4>
-                            <p class="text-gray-400 text-sm">60-day payment terms. Simple invoicing. Monthly statements.</p>
+                            <p class="text-gray-400 text-sm">Flexible payment terms. Simple invoicing. Monthly statements.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Travel Destination Images -->
                 <div class="grid grid-cols-6 gap-3 mb-8">
                     <div class="image-card h-24">
                         <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=300" alt="Venice">
@@ -798,7 +770,7 @@
         </div>
     </div>
 
-    <!-- Slide 6: CTA / Join Now with Travel Background -->
+    <!-- Slide 6: CTA / Join Now -->
     <div class="slide bg-travel-6" id="slide-5" tabindex="-1" aria-label="Contact slide">
         <div class="flex-1 flex items-center justify-center p-12 backdrop-blur-sm bg-black/30">
             <div class="max-w-4xl w-full text-center space-y-8">
@@ -827,8 +799,8 @@
                         <p class="text-sm text-gray-400">Implementation Cost</p>
                     </div>
                     <div class="bg-black/70 backdrop-blur-md border border-white/10 rounded-xl p-6">
-                        <p class="text-3xl font-bold text-white">5%</p>
-                        <p class="text-sm text-gray-400">Instant Member Savings</p>
+                        <p class="text-3xl font-bold text-white">Great</p>
+                        <p class="text-sm text-gray-400">Member Savings</p>
                     </div>
                 </div>
 
@@ -881,9 +853,8 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="border-t border-white/10 p-6 backdrop-blur-sm bg-black/30">
-            <div class="max-w-6xl mx-auto flex justify-between items-center text-sm text-gray-500">
+            <div class="max-w-6xl mx-auto flex justify-between items-center text-sm text-gray-600">
                 <div class="flex items-center gap-4">
                     <img src="orn-logo.png" alt="ORN" class="h-6 w-auto opacity-60" onerror="this.style.display='none'">
                     <span class="font-semibold text-gray-400">ORN Worldwide</span>
@@ -900,7 +871,7 @@
     </div>
 
     <!-- Keyboard Navigation -->
-    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-4 text-sm text-gray-500 bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-4 text-sm text-gray-600 bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
         <button onclick="prevSlide()" class="hover:text-white transition-colors" tabindex="0"><i class="fas fa-arrow-left"></i> Previous</button>
         <span class="w-px h-4 bg-gray-700"></span>
         <button onclick="nextSlide()" class="hover:text-white transition-colors" tabindex="0">Next <i class="fas fa-arrow-right"></i></button>
@@ -913,44 +884,33 @@
         const totalSlides = 6;
 
         function showSlide(index) {
-            // Update slides
             document.querySelectorAll('.slide').forEach((slide, i) => {
                 slide.classList.remove('active');
                 slide.setAttribute('tabindex', '-1');
             });
             
-            // Update nav dots
             document.querySelectorAll('.nav-dot').forEach((dot, i) => {
                 dot.classList.remove('active');
                 dot.setAttribute('aria-selected', 'false');
                 dot.setAttribute('tabindex', '-1');
             });
             
-            // Show current slide
             const currentSlideEl = document.getElementById(`slide-${index}`);
             currentSlideEl.classList.add('active');
             currentSlideEl.setAttribute('tabindex', '0');
             currentSlideEl.focus();
             
-            // Update current dot
             const currentDot = document.querySelector(`[data-slide="${index}"]`);
             currentDot.classList.add('active');
             currentDot.setAttribute('aria-selected', 'true');
             currentDot.setAttribute('tabindex', '0');
             
-            // Update progress bar
             const progress = ((index + 1) / totalSlides) * 100;
             document.getElementById('progressBar').style.width = `${progress}%`;
             
-            // Update counter
             document.getElementById('slideCounter').textContent = `${index + 1} / ${totalSlides}`;
             
             currentSlide = index;
-            
-            // Animate counters if on slide 3
-            if (index === 2) {
-                animateCounters();
-            }
         }
 
         function nextSlide() {
@@ -969,27 +929,6 @@
             showSlide(index);
         }
 
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-counter');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        counter.textContent = target + (target === 60 ? '' : target === 24 ? '/7' : target === 0 ? '%' : '%');
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = Math.floor(current) + (target === 60 ? '' : target === 24 ? '/7' : target === 0 ? '%' : '%');
-                    }
-                }, 16);
-            });
-        }
-
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
                 e.preventDefault();
@@ -1003,13 +942,9 @@
             } else if (e.key === 'End') {
                 e.preventDefault();
                 goToSlide(totalSlides - 1);
-            } else if (e.key === 'Tab') {
-                // Allow normal tabbing within slides
-                return;
             }
         });
 
-        // Touch/swipe support
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -1027,7 +962,6 @@
             if (touchEndX > touchStartX + 50) prevSlide();
         }
 
-        // Initialize
         showSlide(0);
     </script>
 </body>
